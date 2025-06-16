@@ -1,0 +1,26 @@
+[package]
+name = "opendaw-desktop-core" # Or any other name for the Rust core
+version = "0.1.0"
+description = "OpenDAW Desktop Core"
+authors = ["You"]
+license = ""
+repository = ""
+default-run = "opendaw-desktop-core" # Matches the binary name from add_executable in CMake if it were a CMake project
+edition = "2021"
+rust-version = "1.60" # Example, adjust as needed
+
+[build-dependencies]
+tauri-build = { version = "1.5", features = [] }
+
+[dependencies]
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+tauri = { version = "1.6", features = ["shell-open"] }
+
+# Add the local vst_bridge crate
+vst_bridge = { path = "./vst_bridge" }
+
+[features]
+# By default Tauri builds with the `custom-protocol` feature.
+# See https://tauri.app/v1/references/features#custom-protocol
+custom-protocol = ["tauri/custom-protocol"]

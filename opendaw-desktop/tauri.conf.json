@@ -1,0 +1,1 @@
+{ "build": { "devPath": "../src", "distDir": "../src" }, "package": { "productName": "OpenDAW", "version": "0.1.0" }, "tauri": { "windows": [ { "title": "OpenDAW", "width": 800, "height": 600 } ] } }
